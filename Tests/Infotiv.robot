@@ -1,13 +1,15 @@
 *** Settings ***
 Documentation   This is some basic info about the whole test suite
 Library         SeleniumLibrary
+Resource        ../Resources/keywords.robot
+Test Setup      Open Browser                            about:blank            ${BROWSER}
+Test Teardown     Close Browser
 
 *** Test Cases ***
-User can access infotiv.net
+User may create a user account
     [Documentation]                         This is some basic info about the test
     [Tags]                                  Test 1
-    Open Browser                            about:blank         chrome
-    Go To                                   http://rental5.infotiv.net
+    Go To                                    ${URL}
     Wait Until Page Contains                Infotiv Car Rental
     Input Text                             //*[@id="email"]   E-MAIL
     Close Browser
@@ -15,20 +17,34 @@ User can access infotiv.net
 User is required to input start and end dates for the trip
     [Documentation]              This is some basic info about the test
     [Tags]                       Test 2
-    Open Browser                 about:blank         chrome
-    Go To                        http://rental5.infotiv.net
-    Input Text                  //*[@id="start"]     When do you want to make your trip?
-    List Selection Should Be     Earliest selectable date is today
-    List Selection Should Be     one month ahead from today
+    Go To                         ${URL}
+    Input Text                    //*[@id="start"]     When do you want to make your trip?
+    Click Button                  //*[@id="start"]
+    Click Button                  //*[@id="end"]
     Close Browser
+
+User can access infotiv.net
+    [Documentation]                 This is some basic information about the test
+    [Tags]                          Test 3
+    Go to                            ${URL}
+    Wait Until Page Contains        Infotiv Car Rental
+    Click Button                    //*[@id="continue"]
+    Click Button                    //*[@id="bookQ7pass5"]
+    Close Browser
+
 
 User is required to pick a car model                             #negativt testfall (ogiltig indata)
-    [Documentation]          This is some basic info about the test
-    [Tags]                   Test 4
-    click button            //*[@id="continue"]
+    [Documentation]                 This is some basic info about the test
+    [Tags]                          Test 4
+    Go to                           ${URL}
+    Wait Until Page Contains        Infotiv Car Rental
+    click button                    //*[@id="password"]
     Close Browser
 
 
-
-
-
+User is allowed for Date Selection
+    [Documentation]          This is some basic info about the test
+    [Tags]                   Test 5
+     Given browser is opend to select date
+     When press the selected date
+     Then press"Continue"to should reserve a car
