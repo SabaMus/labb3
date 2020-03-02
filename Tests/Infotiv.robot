@@ -32,13 +32,12 @@ User can access infotiv.net
     Click Button                    //*[@id="bookQ7pass5"]
     Close Browser
 
-
-User is required to pick a car model                             #negativt testfall (ogiltig indata)
+User is allow to click The About text
     [Documentation]                 This is some basic info about the test
     [Tags]                          Test 4
     Go to                           ${URL}
     Wait Until Page Contains        Infotiv Car Rental
-    click button                    //*[@id="password"]
+    click element                   //*[@id="confirmPassword"]
     Close Browser
 
 
