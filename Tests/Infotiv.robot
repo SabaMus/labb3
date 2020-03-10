@@ -12,7 +12,7 @@ User may create a user account
     Go To                                    ${URL}
     Wait Until Page Contains                Infotiv Car Rental
     Input Text                             //*[@id="email"]   E-MAIL
-    Close Browser
+
 
 User is required to input start and end dates for the trip
     [Documentation]              This is some basic info about the test
@@ -21,7 +21,7 @@ User is required to input start and end dates for the trip
     Input Text                    //*[@id="start"]     When do you want to make your trip?
     Click Button                  //*[@id="start"]
     Click Button                  //*[@id="end"]
-    Close Browser
+
 
 User can access infotiv.net
     [Documentation]                 This is some basic information about the test
@@ -30,7 +30,7 @@ User can access infotiv.net
     Wait Until Page Contains        Infotiv Car Rental
     Click Button                    //*[@id="continue"]
     Click Button                    //*[@id="bookQ7pass5"]
-    Close Browser
+
 
 User is allow to click The About text
     [Documentation]                 This is some basic info about the test
@@ -38,7 +38,7 @@ User is allow to click The About text
     Go to                           ${URL}
     Wait Until Page Contains        Infotiv Car Rental
     click element                   //*[@id="confirmPassword"]
-    Close Browser
+
 
 
 User is allowed for Date Selection
