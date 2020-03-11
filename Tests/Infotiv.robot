@@ -12,7 +12,10 @@ User may create a user account
     Go To                                    ${URL}
     Wait Until Page Contains                Infotiv Car Rental
     Input Text                             //*[@id="email"]   E-MAIL
-
+    Input Text                             //*[@id="password"]   password
+    Click Button                           //*[@id="login"]     login
+    Wait Until Page Contains               //*[@id="questionText"]   What would you like to drive?
+ 
 
 User is required to input start and end dates for the trip
     [Documentation]              This is some basic info about the test
@@ -21,7 +24,7 @@ User is required to input start and end dates for the trip
     Input Text                    //*[@id="start"]     When do you want to make your trip?
     Click Button                  //*[@id="start"]
     Click Button                  //*[@id="end"]
-
+    Wait Until Page Contains      //*[@id="questionText"]   What would you like to drive?
 
 User can access infotiv.net
     [Documentation]                 This is some basic information about the test
@@ -36,9 +39,8 @@ User is allow to click The About text
     [Documentation]                 This is some basic info about the test
     [Tags]                          Test 4
     Go to                           ${URL}
-    Wait Until Page Contains        Infotiv Car Rental
-    click element                   //*[@id="confirmPassword"]
-
+    Wait Until Page Contains        //*[@id="questionText"]     Welcome
+    click element                   //*[@id="linkButton"]       Documentation
 
 
 User is allowed for Date Selection
