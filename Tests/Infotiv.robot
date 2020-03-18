@@ -2,7 +2,7 @@
 Documentation   This is some basic info about the whole test suite
 Library         SeleniumLibrary
 Resource        ../Resources/keywords.robot
-Test Setup      Open Browser                            about:blank            ${BROWSER}
+Test Setup        Open Browser                            about:blank            ${BROWSER}
 Test Teardown     Close Browser
 
 *** Test Cases ***
@@ -10,37 +10,27 @@ User may create a user account
     [Documentation]                         This is some basic info about the test
     [Tags]                                  Test 1
     Go To                                    ${URL}
-    Wait Until Page Contains                Infotiv Car Rental
-    Input Text                             //*[@id="email"]   E-MAIL
-    Input Text                             //*[@id="password"]   password
-    Click Button                           //*[@id="login"]     login
-    Wait Until Page Contains               //*[@id="questionText"]   What would you like to drive?
- 
+    create a user account
 
 User is required to input start and end dates for the trip
-    [Documentation]              This is some basic info about the test
-    [Tags]                       Test 2
+    [Documentation]               This is some basic info about the test
+    [Tags]                        Test 2
     Go To                         ${URL}
-    Input Text                    //*[@id="start"]     When do you want to make your trip?
-    Click Button                  //*[@id="start"]
-    Click Button                  //*[@id="end"]
-    Wait Until Page Contains      //*[@id="questionText"]   What would you like to drive?
+    input dates for the trip
+
 
 User can access infotiv.net
     [Documentation]                 This is some basic information about the test
     [Tags]                          Test 3
     Go to                            ${URL}
-    Wait Until Page Contains        Infotiv Car Rental
-    Click Button                    //*[@id="continue"]
-    Click Button                    //*[@id="bookQ7pass5"]
+   Enter Search Term
 
 
-User is allow to click The About text
+User is allow to use reset button
     [Documentation]                 This is some basic info about the test
     [Tags]                          Test 4
     Go to                           ${URL}
-    Wait Until Page Contains        //*[@id="questionText"]     Welcome
-    click element                   //*[@id="linkButton"]       Documentation
+    reset button
 
 
 User is allowed for Date Selection
