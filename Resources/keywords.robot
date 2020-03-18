@@ -18,7 +18,6 @@ Verify Page Loaded
 create a user account
    Click element                            //*[@id="createUser"]
 
-
 input dates for the trip
     Input Text                    //*[@id="start"]     When do you want to make your trip?
     Click Button                  //*[@id="start"]

@@ -10,12 +10,15 @@ User may create a user account
     [Documentation]                         This is some basic info about the test
     [Tags]                                  Test 1
     Go To                                    ${URL}
+    Wait Until Page Contains        Infotiv Car Rental
     create a user account
+
 
 User is required to input start and end dates for the trip
     [Documentation]               This is some basic info about the test
     [Tags]                        Test 2
     Go To                         ${URL}
+    Wait Until Page Contains        Infotiv Car Rental
     input dates for the trip
 
 
@@ -23,13 +26,15 @@ User can access infotiv.net
     [Documentation]                 This is some basic information about the test
     [Tags]                          Test 3
     Go to                            ${URL}
-   Enter Search Term
+    Wait Until Page Contains        Infotiv Car Rental
+    Enter Search Term
 
 
 User is allow to use reset button
     [Documentation]                 This is some basic info about the test
     [Tags]                          Test 4
     Go to                           ${URL}
+    Wait Until Page Contains        Infotiv Car Rental
     reset button
 
 
